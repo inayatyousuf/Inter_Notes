@@ -142,7 +142,29 @@ Output is – file1.txt file2.txt differ: byte number, line number
 11. whoami: In Linux, a whoami command is used to print the currently logged-in username into your Linux system. If you are logged in as a root using sudo command “whoami” command return root as the current user.
 Eg whoami
 
+Viewing Ownership and Permissions
+The most common way to view the permissions of a file is to use ls with the long listing option, e.g. ls -l myfile. If you want to view the permissions of all of the files in your current directory, run the command without an argument, like this:
 
+ls -l
+
+File Type
+
+In Linux, there are two basic types of files: normal and special. The file type is indicated by the first character of the mode of a file–in this guide, we refer to this as the file type field.
+
+Normal files can be identified by files with a hyphen (-) in their file type fields. Normal files are just plain files that can contain data. They are called normal, or regular, files to distinguish them from special files.
+
+Special files can be identified by files that have a non-hyphen character, such as a letter, in their file type fields, and are handled by the OS differently than normal files.
+
+In each triad, read, write, and execute permissions are represented in the following way:
+
+    Read: Indicated by an r in the first position
+    Write: Indicated by a w in the second position
+    Execute: Indicated by an x in the third position. In some special cases, there may be a different character here
+
+A hyphen (-) in the place of one of these characters indicates that the respective permission is not available for the respective class. For example, if the group triad for a file is r--, the file is “read-only” to the group that is associated with the file.
+
+The umask command defines the default permissions for newly created files based on the "base" permissions set defined for files and directories. umask 000
+Directories have a base permissions set of 777, or read, write, and execute permissions for all users.
 
 
    
